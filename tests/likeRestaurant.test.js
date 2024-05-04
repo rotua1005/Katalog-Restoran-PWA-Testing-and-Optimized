@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // likeRestaurant.test.js
 
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';

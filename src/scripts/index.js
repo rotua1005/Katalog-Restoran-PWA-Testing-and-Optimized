@@ -1,12 +1,9 @@
-// index.js
-
 import 'regenerator-runtime';
 import '../styles/main.css';
 import '../styles/responsive.css';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 import 'lazysizes';
-// import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({

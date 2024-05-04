@@ -6,23 +6,19 @@ import scrollTop from '../templates/scroll';
 const Like = {
   async render() {
     return `
-    <section id="main" class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-        <picture>
-        <source media="(max-width: 600px)" srcset="./images/hero-image-small.jpg">
-        <source media="(max-width: 600px)" srcset="./images/hero-image-small.webp">
-        <img class="hero-image lazyload" src="./images/hero-image.jpg" alt="Hero Image">
-        </picture>
-        </div>
-      </div>
-    </section>
+    <picture>
+    <source media="(max-width: 600px)" srcset="./images/hero-image-small.webp" type="image/webp">
+    <source media="(max-width: 600px)" srcset="./images/hero-image-small.jpg" type="image/jpeg">
+    <source srcset="./images/hero-image-large.webp" type="image/webp">
+    <source srcset="./images/hero-image-large.jpg" type="image/jpeg">
+    <img class="hero-image lazyload" data-src="./images/hero-image-large.jpg" alt="Hero Image" loading="lazy">
+  </picture>
       <div class="content">
         <h2 class="content__heading">Favorite Restaurants</h2>
         <div id="restaurants" class="restaurants">
         </div>
       </div>
-      <button aria-label="scroll to top" id="scrollTopButton">Skip</button>
+      <button aria-label="scroll to top" id="scrollTopButton">Top</button>
     `;
   },
 

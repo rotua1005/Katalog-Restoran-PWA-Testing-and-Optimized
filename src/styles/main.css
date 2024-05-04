@@ -12,6 +12,27 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+
+.skip-to-content {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #150558;
+  color: #fff;
+  padding: 5px 10px;
+  z-index: 1000; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+  border: 2px solid #fff; 
+  border-radius: 5px;
+}
+
+.skip-to-content:focus {
+  opacity: 1; 
+}
+
+
 #scrollTopButton {
   display: none;
   position: fixed;
@@ -47,70 +68,76 @@ body {
 }
 
 
-/*
-  AppBar
-*/
  
-.app-bar {
-  padding: 8px 16px;
-  background-color: white;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-}
- 
-.app-bar .app-bar__menu {
-  display: flex;
-  align-items: center;
-}
- 
-.app-bar .app-bar__menu button {
-  background-color: transparent;
-  border: none;
-  font-size: 18px;
-  padding: 8px;
-  cursor: pointer;
-}
- 
-.app-bar .app-bar__brand {
-  display: flex;
-  align-items: center;
-}
- 
-.app-bar .app-bar__brand h1 {
-  color: #db0000;
-  text-transform: uppercase;
-  font-size: 22px;
-  user-select: none;
-}
- 
-.app-bar .app-bar__navigation {
-  position: absolute;
-  top: 50px;
-  left: -180px;
-  width: 150px;
-  transition: all 0.3s;
-  padding: 8px;
-  background-color: white;
-  overflow: hidden;
-}
- 
-.app-bar .app-bar__navigation.open {
-  left: 0;
-}
- 
-.app-bar .app-bar__navigation ul li a {
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  padding: 8px;
-  margin-bottom: 5px;
-  width: 100%;
-}
+  /*
+    AppBar
+  */
+   
+  .app-bar {
+    padding: 8px 16px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+   
+  .app-bar .app-bar__menu {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__menu button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding: 0; 
+    width: 44px; 
+    height: 44px; 
+    cursor: pointer;
+  }
+  
+  .app-bar .app-bar__brand {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__brand h1 {
+    color: #db0000;
+    text-transform: uppercase;
+    font-size: 22px;
+    user-select: none;
+  }
+   
+  .app-bar .app-bar__navigation {
+    position: absolute;
+    top: 50px;
+    left: -180px;
+    width: 150px;
+    transition: all 0.3s;
+    padding: 8px;
+    background-color: white;
+    overflow: hidden;
+  }
+   
+  .app-bar .app-bar__navigation.open {
+    left: 0;
+  }
+   
+  .app-bar .app-bar__navigation ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 6px;
+    width: 44px; 
+    height: 44px; 
+    box-sizing: border-box; 
+    margin-bottom: 5px;
+  }
+  
  
 /*
   Main Content
@@ -193,10 +220,32 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-line-clamp: 4; 
   -webkit-box-orient: vertical;
 }
- 
+
+
+.restaurant__title {
+  width: 44px;
+  height: 44px;
+  margin: 0; 
+}
+
+.restaurant__title a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none; 
+  text-align: center; 
+  line-height: 44px; 
+  white-space: nowrap; 
+}
+
+
+
+
+
+
  
 /*
   Restaurant
@@ -251,11 +300,11 @@ main {
   font-size: 1.5rem;
   margin-left: 0.5rem;
   display: inline-flex; 
-  align-items: center; /* Menyamakan ikon di tengah vertikal */
-  justify-content: center; /* Menyamakan ikon di tengah horizontal */
-  min-width: 44px; /* Menentukan lebar minimum */
-  min-height: 44px; /* Menentukan tinggi minimum */
-  padding: 10px; /* Padding untuk memperluas area klik */
+  align-items: center;
+  justify-content: center; 
+  min-width: 10px; 
+  min-height: 10px; 
+  padding: 6px; 
 }
 
 

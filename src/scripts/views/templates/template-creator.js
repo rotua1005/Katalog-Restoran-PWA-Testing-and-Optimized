@@ -5,10 +5,11 @@ import CONFIG from '../../globals/config';
 const createRestaurantDetailTemplate = (restaurant) => `
   <div class="restaurant-detail">
     <h2 class="restaurant__title">${restaurant.name}</h2>
+    <br>
     <picture>
-    <source type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
-    <source type="image/jpeg" srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
-    <img class="restaurant__poster lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
+      <source type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
+      <source type="image/jpeg" srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
+      <img class="restaurant__poster lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" loading="lazy">
     </picture>
     <div class="restaurant__info">
       <p>City: ${restaurant.city}</p>
@@ -46,8 +47,8 @@ const createRestaurantItemTemplate = (restaurant) => `
     <picture>
     <source type="image/webp" srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
     <source type="image/jpeg" srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
-    <img class="restaurant-item__header__poster lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
-    </picture>
+    <img class="restaurant-item__header__poster lazyload" alt="${restaurant.name}" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" loading="lazy">
+  </picture>
       <div class="restaurant-item__header__rating">
         <p>⭐️
           <span class="restaurant-item__header__rating__score">${restaurant.rating}</span>
